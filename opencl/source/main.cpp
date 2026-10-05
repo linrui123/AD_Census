@@ -90,7 +90,7 @@ int main(int argc, char ** argv)
     name.reserve(size);
     CHECK_ERROR(errcode != CL_SUCCESS, 
       errcode, 
-      errcode = clGetPlatformInfo(platforms[i], CL_PLATFORM_NAME, size, name.data(), NULL));
+      errcode = clGetPlatformInfo(platforms[i], CL_PLATFORM_NAME, size, (void *)name.data(), NULL));
 
     if (strstr(name.c_str(), "NVIDIA"))
     {
